@@ -8,3 +8,4 @@ while ($row = oci_fetch_array($product, OCI_RETURN_NULLS+OCI_ASSOC)) {
     echo join(", ", $row);
     echo "<br/>";
 }
+

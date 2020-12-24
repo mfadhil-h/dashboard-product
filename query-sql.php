@@ -25,11 +25,11 @@ function execute_query($query) {
  * @return false|resource
  */
 function select_product($kodeBarang='') {
-    $conclusion = "";
+    $condition = "";
     if ($kodeBarang != "") {
-        $conclusion = "WHERE KODE_PRODUCT='$kodeBarang'";
+        $condition = "WHERE KODE_PRODUCT='$kodeBarang'";
     }
-    $query = "SELECT * FROM MERCU.PRODUCT " . $conclusion;
+    $query = "SELECT * FROM MERCU.PRODUCT " . $condition;
     return execute_query($query);
 }
 
@@ -73,3 +73,4 @@ function select_user($username, $password) {
     $query = "SELECT * FROM MERCU.\"USER\" WHERE USERNAME='$username' and PASSWORD='$password'";
     return execute_query($query);
 }
+
