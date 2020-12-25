@@ -9,10 +9,10 @@ if (isset($_POST["login"])) {
     $username = $_POST["username"];
     $pass = $_POST["password"];
 
-    $result = select_user($username,$pass);
+    $result = select_user($username, $pass);
     if ($result) {
-        $row = oci_fetch_array($result, OCI_RETURN_NULLS + OCI_ASSOC);
-        if ($pass === $row['PASSWORD']) {
+        $nRows = oci_fetch_all($result, $result_array, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+        if ($nRows>0) {
             $_SESSION['login'] = true;
             header("Location:index.php");
             exit();

@@ -5,7 +5,8 @@ include("oci-conn.php");
  * @param $query
  * @return false|resource
  */
-function execute_query($query) {
+function execute_query($query)
+{
     global $conn;
     $result = oci_parse($conn, $query);
     if (!$result) {
@@ -24,7 +25,8 @@ function execute_query($query) {
  * @param string $kodeBarang
  * @return false|resource
  */
-function select_product($kodeBarang='') {
+function select_product($kodeBarang = '')
+{
     $conclusion = "";
     if (trim($kodeBarang) !== "") {
         $conclusion = "WHERE KODE_PRODUCT='$kodeBarang'";
@@ -39,7 +41,8 @@ function select_product($kodeBarang='') {
  * @param $totalBarang
  * @return false|resource
  */
-function insert_product($kodeBarang, $namaBarang, $totalBarang) {
+function insert_product($kodeBarang, $namaBarang, $totalBarang)
+{
     $query = "INSERT INTO MERCU.PRODUCT (KODE_PRODUCT, NAMA_PRODUCT, JUMLAH) VALUES('$kodeBarang', '$namaBarang', '$totalBarang')";
     return execute_query($query);
 }
@@ -50,7 +53,8 @@ function insert_product($kodeBarang, $namaBarang, $totalBarang) {
  * @param $totalBarang
  * @return false|resource
  */
-function update_product($kodeBarang, $totalBarang, $namaBarang="") {
+function update_product($kodeBarang, $totalBarang, $namaBarang = "")
+{
     $set_update = "JUMLAH = '$totalBarang'";
     if (trim($namaBarang) !== "") {
         $set_update = $set_update . ", NAMA_PRODUCT = '$namaBarang'";
@@ -59,7 +63,8 @@ function update_product($kodeBarang, $totalBarang, $namaBarang="") {
     return execute_query($query);
 }
 
-function delete_product($kodeBarang) {
+function delete_product($kodeBarang)
+{
     $query = "DELETE FROM MERCU.PRODUCT WHERE KODE_PRODUCT = '$kodeBarang'";
     return execute_query($query);
 }
@@ -69,7 +74,8 @@ function delete_product($kodeBarang) {
  * @param $password
  * @return false|resource
  */
-function select_user($username, $password) {
+function select_user($username, $password)
+{
     $query = "SELECT * FROM MERCU.\"USER\" WHERE USERNAME='$username' and PASSWORD='$password'";
     return execute_query($query);
 }

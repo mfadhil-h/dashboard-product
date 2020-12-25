@@ -12,12 +12,11 @@ $kodeProduct = @$_POST['kodeProduct'];
 $namaProduct = @$_POST['namaProduct'];
 $jumlah = @$_POST['jumlah'];
 
-//pengujian jika
 if (isset($_POST["save"])) {
     $isExist = select_product($kodeProduct);
-    $nRows = oci_fetch_all($isExist, $result_array,null,null,OCI_FETCHSTATEMENT_BY_ROW);
-    if ($nRows>0) {
-        update_product($kodeProduct,$jumlah,$namaProduct);
+    $nRows = oci_fetch_all($isExist, $result_array, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+    if ($nRows > 0) {
+        update_product($kodeProduct, $jumlah, $namaProduct);
         echo "
             <script>
                 alert('Data Is Exist, Update Data')
@@ -25,7 +24,7 @@ if (isset($_POST["save"])) {
             </script>
         ";
     } else {
-        insert_product($kodeProduct,$namaProduct,$jumlah);
+        insert_product($kodeProduct, $namaProduct, $jumlah);
         echo "
             <script>
                 alert('Create New Data')
@@ -35,8 +34,8 @@ if (isset($_POST["save"])) {
     }
 } elseif (isset($_POST["delete"])) {
     $isExist = select_product($kodeProduct);
-    $nRows = oci_fetch_all($isExist, $result_array,null,null,OCI_FETCHSTATEMENT_BY_ROW);
-    if ($nRows>0) {
+    $nRows = oci_fetch_all($isExist, $result_array, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+    if ($nRows > 0) {
         delete_product($kodeProduct);
         echo "
             <script>

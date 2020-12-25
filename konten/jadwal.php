@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 class ListNode
 {
     public $data;
@@ -38,9 +39,8 @@ class LinkList
     {
         $listData = array();
         $current = $this->first_node;
-        while($current != NULL)
-        {
-            echo $current->read_node().' <br>';
+        while ($current != NULL) {
+            echo $current->read_node() . ' <br>';
             $current = $current->next;
         }
     }
@@ -49,25 +49,23 @@ class LinkList
     {
         $new_node = new ListNode($data);
 
-        if($this->first_node != NULL)
-        {
+        if ($this->first_node != NULL) {
             $this->last_node->next = $new_node;
             $new_node->next = NULL;
             $this->last_node = &$new_node;
             $this->count++;
-        }
-        else
-        {
+        } else {
             $new_node->next = $this->first_node;
             $this->first_node = &$new_node;
 
-            if($this->last_node == NULL)
+            if ($this->last_node == NULL)
                 $this->last_node = &$new_node;
 
             $this->count++;
         }
     }
 }
+
 //Create linked list
 $link1 = new LinkList();
 
@@ -77,8 +75,8 @@ $link1->insert('senin');
 $link1->insert('selasa');
 $link1->insert('rabu');
 $link1->insert('kamis');
-$link1->insert('jumat'); 
-      
+$link1->insert('jumat');
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -86,9 +84,9 @@ $link1->insert('jumat');
     <title>coba</title>
 </head>
 <body>
-    <h1>Mahasiswa</h1>
-    <p>Bonus Nilai: </p>
-    <p><?=$link1->read_list(); ?></p>
-    <p><?= $link1->size()?></p>
+<h1>Mahasiswa</h1>
+<p>Bonus Nilai: </p>
+<p><?= $link1->read_list(); ?></p>
+<p><?= $link1->size() ?></p>
 </body>
 </html> 
