@@ -25,11 +25,11 @@ function execute_query($query) {
  * @return false|resource
  */
 function select_product($kodeBarang='') {
-    $condition = "";
-    if ($kodeBarang != "") {
-        $condition = "WHERE KODE_PRODUCT='$kodeBarang'";
+    $conclusion = "";
+    if (trim($kodeBarang) !== "") {
+        $conclusion = "WHERE KODE_PRODUCT='$kodeBarang'";
     }
-    $query = "SELECT * FROM MERCU.PRODUCT " . $condition;
+    $query = "SELECT * FROM MERCU.PRODUCT " . $conclusion . " ORDER BY KODE_PRODUCT";
     return execute_query($query);
 }
 
@@ -52,7 +52,7 @@ function insert_product($kodeBarang, $namaBarang, $totalBarang) {
  */
 function update_product($kodeBarang, $totalBarang, $namaBarang="") {
     $set_update = "JUMLAH = '$totalBarang'";
-    if ($namaBarang != "") {
+    if (trim($namaBarang) !== "") {
         $set_update = $set_update . ", NAMA_PRODUCT = '$namaBarang'";
     }
     $query = "UPDATE MERCU.PRODUCT SET " . $set_update . " WHERE KODE_PRODUCT = '$kodeBarang'";
@@ -73,4 +73,3 @@ function select_user($username, $password) {
     $query = "SELECT * FROM MERCU.\"USER\" WHERE USERNAME='$username' and PASSWORD='$password'";
     return execute_query($query);
 }
-

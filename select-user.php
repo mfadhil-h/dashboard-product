@@ -1,6 +1,6 @@
 <?php
 
-include("query-sql.php");
+include("konten/query-sql.php");
 
 $user = select_user('fadhil','12345678');
 

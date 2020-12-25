@@ -1,0 +1,79 @@
+body{
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	}
+header{
+	color: #3fa6dd;
+	text-align: center;
+	margin-top: 20px;
+	padding: 15px;
+	border-radius:20px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url(../image/bg.jpeg);
+}
+nav li{
+	padding-top: 15px; 
+	list-style-type: none;
+	display: inline-block;
+	color: #660066;
+	margin-right: 10px;
+}
+nav a{
+	text-decoration: none;
+	padding: 5px 20px;
+	border: 1px solid #0066ff;
+	border-radius: 10px;
+}
+nav a:hover{
+	font-variant: small-caps;
+	background-color:#80aaff;
+	color: white;	
+}
+.logout {
+	float: right;
+	margin-right: 70px;
+}
+.logout a{
+		background-color:#80aaff;
+		color:white;
+}
+.banner{
+	width: 100%;
+	height: 80%;
+	position: relative;
+}
+.teks {
+	position: relative;
+	width: 61%;
+	float: left;
+	margin-top: 5%;
+	left: 10%;
+	color: #0004ff;
+}
+.teks h1{
+	font-size: 43px;
+}
+.teks p{
+	text-align:justify;
+	margin-left: 25px;
+	margin-top: -10px;
+}
+
+.logo{
+	width: 35%;
+	padding-top:40px;
+	padding-bottom: 40px;
+
+	
+}
+.input{
+	padding-top:40px;
+}
+footer{
+	padding: 15px;
+	text-align: center;
+	color: white;
+	background-color: #4d94ff;
+}

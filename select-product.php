@@ -1,6 +1,6 @@
 <?php
 
-include("query-sql.php");
+include("konten/query-sql.php");
 
 $product = select_product();
 

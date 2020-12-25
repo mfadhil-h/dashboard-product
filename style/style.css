@@ -1,0 +1,21 @@
+body{
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+header{
+	background-color: #660066;
+	color: white;
+	text-align: center;
+	margin-top: 20px;
+	padding: 20px;
+	border-radius:20px;
+	background-image: linear-gradient(to left,#9900CC,#660066) 
+}
+nav li{
+	padding-top: 15px; 
+	list-style-type: none;
+	display: inline-block;
+	color: #660066;
+	margin-right: 10px;
+}
